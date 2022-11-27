@@ -20,7 +20,6 @@ public class Contact {
 	private String name;
 	private String secondName;
 	private String work;
-	@Column(unique = true)
 	private String email;
 	private String phone;
 	@Column(length = 1000)

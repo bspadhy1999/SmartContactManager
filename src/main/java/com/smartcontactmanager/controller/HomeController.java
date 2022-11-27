@@ -137,7 +137,7 @@ public class HomeController {
 				model.addAttribute("user",user);
 				return "signup";
 			}
-			user.setRole("User");
+			user.setRole("ROLE_USER");
 			user.setEnabled(true);
 			user.setImageURL("contact.png");
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -164,14 +164,14 @@ public class HomeController {
 	@PostMapping("/create_order")
 	@ResponseBody
 	public String createOrder(@RequestBody Map<String, Object> data) throws RazorpayException{
+		int txnno=random.nextInt(999999);
 		int amt = Integer.parseInt(data.get("amount").toString());
 		var client= new RazorpayClient("rzp_live_bxZxQiMNkAl4q2", "5DOS7vJVcFTGdmWExYm47aNA");
 		JSONObject ob = new JSONObject();
 		ob.put("amount", amt*100);
 		ob.put("currency", "INR");
-		ob.put("receipt", "txn_235425");
+		ob.put("receipt", "txn_"+txnno);
 		Order order = client.Orders.create(ob);
-		System.out.println(order);
 		return order.toString();
 	}
 

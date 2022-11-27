@@ -46,9 +46,9 @@ function paymentStart(){
                             document.getElementById("payment_field").value="";
                         },
                         prefill: {
-                        name: "Smart Contact Manager Private Ltd.",
-                        email: "bspadhy1999@gmail.com",
-                        contact: "6370023010"
+                        name: "",
+                        email: "",
+                        contact: ""
                         },
                         notes: {
                         address: "Smart Contact Manager Private Ltd."
