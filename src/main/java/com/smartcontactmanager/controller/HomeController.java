@@ -166,7 +166,7 @@ public class HomeController {
 	public String createOrder(@RequestBody Map<String, Object> data) throws RazorpayException{
 		int txnno=random.nextInt(999999);
 		int amt = Integer.parseInt(data.get("amount").toString());
-		var client= new RazorpayClient("rzp_live_bxZxQiMNkAl4q2", "5DOS7vJVcFTGdmWExYm47aNA");
+		var client= new RazorpayClient("", "");
 		JSONObject ob = new JSONObject();
 		ob.put("amount", amt*100);
 		ob.put("currency", "INR");
