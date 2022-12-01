@@ -35,7 +35,7 @@ function paymentStart(){
             success:function(response){
                 if(response.status=="created"){
                     let options = {
-                        key: "rzp_live_bxZxQiMNkAl4q2",
+                        key: "",
                         amount: response.amount,
                         currency: "INR",
                         name: "Smart Contact Manager",
